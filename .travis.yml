@@ -27,7 +27,8 @@ matrix:
       install:
         - brew update
         - brew install ninja python3
-        - brew cask install caskroom/cask/dotnet
+        - curl https://download.microsoft.com/download/1/1/5/115B762D-2B41-4AF3-9A63-92D9680B9409/dotnet-sdk-2.1.4-osx-gs-x64.pkg --output dotnet-sdk-2.1.4-osx-gs-x64.pkg --silent
+        - sudo sudo installer -pkg dotnet-sdk-2.1.4-osx-gs-x64.pkg
         - pip2 install --user --upgrade pip && pip2 install --user jinja2 nose pycodestyle
         - pip3 install --user --upgrade pip && pip3 install --user jinja2 nose pycodestyle
         - gem install ffi
