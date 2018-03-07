@@ -8,7 +8,8 @@
         "build/**": true,
         "**/*.pyc": true,
         "**/__pycache__": true,
-        ".vscode/tags": true
+        ".vscode/tags": true,
+        ".vscode/.ropeproject": true
     },
     "editor.formatOnSave": true,
     "python.autoComplete.extraPaths": [
