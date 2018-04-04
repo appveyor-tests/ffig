@@ -1,16 +1,14 @@
-# clone directory
-clone_folder: c:\projects\ffig
+image:
+- Visual Studio 2017
+- Ubuntu
 
 install:
-  - set PATH="C:\Program Files\LLVM\bin";C:\mingw-w64\i686-5.3.0-posix-dwarf-rt_v4-rev0\mingw32\bin;%PATH%
+  - cmd: set PATH="C:\Program Files\LLVM\bin";C:\mingw-w64\i686-5.3.0-posix-dwarf-rt_v4-rev0\mingw32\bin;%PATH%
   - git submodule update --init
-  - python -m pip install pycodestyle
-  - C:\Python36-x64\python -m pip install jinja2 nose pycodestyle
-
-# scripts to run before build (We use this to build and run tests)
-before_build:
-  - cd c:\projects\ffig
+  - sh: python -m pip install jinja2 nose pycodestyle
+  - cmd: C:\Python36-x64\python -m pip install jinja2 nose pycodestyle
   
 build_script:
-  - python scripts\build.py -t --python-path "C:\\Python36-x64\\python"
+  - cmd: python scripts\build.py -t --python-path "C:\\Python36-x64\\python"
+  - sh: python scripts/build.py -t 
 
