@@ -16,7 +16,7 @@ install:
   - sh: sudo gem install ffi
   - sh: export LD_LIBRARY_PATH=/usr/lib/llvm-3.8/lib:$LD_LIBRARY_PATH
   - sh: python -m pip install --user jinja2 nose pycodestyle
-  
+
 build_script:
   - cmd: python scripts\build.py -t --python-path "C:\\Python36-x64\\python"
   - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
