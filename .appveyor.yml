@@ -5,13 +5,13 @@ environment:
   APPVEYOR_SSH_BLOCK: true
   APPVEYOR_SSH_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUvrULRVnqephhFVqt2Gm+MRkLewIa7bfrrHTp1+Y6ulBlycVumHKsLMzeulCnxUP7+gVJ9cIQtbNBOt9oGEcSGBNGtmoDPsNOo6lA/9eVkQQR+WlgKYFK2LgtJY2FMpmkeD8BA06lz0arR6oQAac6Yjfn7HQq0XRkmJaFwrgc258JwSldbp9RNGDd7j6DzF1F3QsiLRFeHqZni6eNMnC3Xhmh0Jj4hDjYpeXWKuZjGPXAuVry0XTXPoLaUNfi0R9aDhtD8NszdzWKNwYt2iPKBVaSkMeDFkyLo3+CGLHKw//Uw8GIhtRQk4S6/Yfo7LS3leOJxJs7dryJiUS0IwT9 wasapl@appveyor.com
 
+stack: java 8
 
 install:
   - git submodule update --init
   - cmd: set PATH="C:\Program Files\LLVM\bin";C:\mingw-w64\i686-5.3.0-posix-dwarf-rt_v4-rev0\mingw32\bin;%PATH%
   - cmd: C:\Python36-x64\python -m pip install jinja2 nose pycodestyle
   - sh: sudo apt-get install -y python-software-properties software-properties-common
-  - sh: sudo add-apt-repository ppa:openjdk-r/ppa; sudo apt update; sudo apt install -y openjdk-8-jdk
   - sh: sudo apt-get install -y libclang-dev luajit ninja-build cmake ruby ruby-dev
   - sh: sudo gem install ffi
   - sh: export LD_LIBRARY_PATH=/usr/lib/llvm-3.8/lib:$LD_LIBRARY_PATH
