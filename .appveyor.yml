@@ -20,5 +20,6 @@ install:
 build_script:
   - cmd: python scripts\build.py -t --python-path "C:\\Python36-x64\\python"
   - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
+  - sh: cd $HOME/projects/ffig && git submodule update --init
   - sh: python scripts/build.py -t 
 
